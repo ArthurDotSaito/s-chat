@@ -6,6 +6,16 @@ public abstract class Entity<T>: IEntity where T:IEntity
 {
     public Guid Id { get; protected set; }
     public DateTime CreatedAt { get; protected set; }
-    
     protected Entity() => Id = Guid.NewGuid();
+    public void ChangeCreatedAt(DateTime date)
+    {
+        CreatedAt = date;
+    }
+
+    public void ChangeId()
+    {
+        Id = Guid.NewGuid();
+    }
+
+    
 }
